@@ -1,0 +1,35 @@
+body {
+    background-color: #ddd;
+    font-size: 20px;
+}
+hr {
+    width: 80%;
+    background-color: blue;
+    height: 3px;
+}
+p {
+    color: blue;
+}
+#content {
+    max-width: 60%;
+    margin: 40px auto;
+    border: solid 2px #999;
+    padding: 40px;
+}
+img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+} /* To center align images, either set display to block and use margin, or place img inside a div */
+#topics {
+    width: 60%;
+    margin: 0 auto;
+}
+h1, h2, p, .list {
+    text-align: center;
+}
+.list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
