@@ -1,0 +1,27 @@
+main {
+    max-width: 40%;
+    margin: 0 auto;
+    border: 2px solid #ddd;
+    padding: 50px 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#head {
+    text-align: center;
+}
+h2 {
+    color: blue;
+    font-size: 1em;
+}
+#statement p, li {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+li {
+    padding: 5px;
+}
+img {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    padding-top: 20px;
+}
