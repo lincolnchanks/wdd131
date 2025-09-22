@@ -32,3 +32,16 @@ console.log(course); //Works fine, course is global
 // console.log(student); //Doesn't work, can't access a block variable outside the block
 
 // Basically, global vs. local variables depends on whether a variable is defined inside a code block or not
+
+let selectElem = document.getElementById('webdevlist');
+selectElem.addEventListener('change', function(){
+    let codeValue = selectElem.value;
+    console.log(codeValue); // Grab value they chose, put it into code, print it to console.
+    document.getElementById(codeValue).style.color = "red"; // Makes option turn red
+})
+
+const newParagraph = document.createElement("p");
+newParagraph.innerText = "Added text";
+
+const topics = document.getElementById("#topics");
+topics.appendChild(newParagraph);
