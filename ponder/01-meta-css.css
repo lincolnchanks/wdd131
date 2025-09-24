@@ -33,3 +33,7 @@ h1, h2, p, .list {
     padding: 0;
     text-align: left;
 }
+
+.blue {
+    background-color: lightblue;
+}

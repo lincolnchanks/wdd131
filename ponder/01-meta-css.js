@@ -35,6 +35,9 @@ console.log(course); //Works fine, course is global
 
 let selectElem = document.getElementById('webdevlist');
 selectElem.addEventListener('change', function(){
+    document.querySelector('#html').style.color = 'black';
+    document.querySelector('#css').style.color = 'black';
+    document.querySelector('#js').style.color = 'black';
     let codeValue = selectElem.value;
     console.log(codeValue); // Grab value they chose, put it into code, print it to console.
     document.getElementById(codeValue).style.color = "red"; // Makes option turn red
@@ -45,3 +48,12 @@ newParagraph.innerText = "Added text";
 
 const topics = document.getElementById("#topics");
 topics.appendChild(newParagraph);
+
+// 9/24/25
+
+const image = document.querySelector('img');
+image.setAttribute('src', 'images/html_js_css.jpg');
+image.setAttribute('alt', 'New logo with black background');
+
+document.body.className = 'blue';
+document.body.style.backgroundColor = 'lightblue';
