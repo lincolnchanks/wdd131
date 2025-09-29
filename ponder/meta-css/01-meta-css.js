@@ -47,7 +47,7 @@ const newParagraph = document.createElement("p");
 newParagraph.innerText = "Added text";
 
 const topics = document.getElementById("#topics");
-topics.appendChild(newParagraph);
+// topics.appendChild(newParagraph);
 
 // 9/24/25
 
