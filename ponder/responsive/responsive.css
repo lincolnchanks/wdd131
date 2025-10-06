@@ -28,7 +28,14 @@ section {
 nav a {
     padding: 20px;
     color: black;
-    display: none; /* Links in nav tag don't usually display */
+    /* display: none; Links in nav tag don't usually display */
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    border-top: 1px solid gray;
+}
+.hide {
+  display: none;
 }
 nav a:hover {
     text-decoration: none;
@@ -44,6 +51,14 @@ nav a:hover {
     height: 4px;
     background-color: black;
     margin: 5px 0;
+    transition: .4s;
+}
+.change .bar1 {
+  transform: translate(0, 7px) rotate(-45deg);
+}
+.change .bar2 {opacity: 0;}
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
 }
 footer {
     text-align: center;
@@ -56,6 +71,10 @@ footer {
   }
 
   nav a {
+    border: none;
+    display: inline;
+  }
+  .hide {
     display: inline;
   }
 
@@ -73,6 +92,9 @@ footer {
 
   main {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  nav a {
+    display: inline;
   }
 
 }
