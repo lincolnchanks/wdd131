@@ -13,15 +13,17 @@ nav a {
     text-decoration: none;
     color: crimson;
 }
-#content {
+#book-list {
     margin: 30px;
+    row-gap: 20px;
 }
-#book-info {
+.book-info {
     text-align: right;
 }
-#book-main {
+.book-main {
     margin-left: 30px;
     padding: 30px;
+    margin-bottom: 15px;
 }
 h2 {
     color: crimson;
@@ -38,11 +40,11 @@ footer p {
 }
 
 @media screen and (min-width: 700px) {
-    #content {
+    #book-list {
         display: grid;
         grid-template-columns: 1fr 2fr;
     }
-    #book-main {
+    .book-main {
         border-left: 2px solid rgb(255, 217, 1);
     }
 }
