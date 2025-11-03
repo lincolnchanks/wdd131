@@ -61,7 +61,7 @@ function submitHandler(event) {
 
     let cardNumber = document.querySelector('#creditCardNumber');
     const cardNum = cardNumber.value.trim();
-    if (paymentSelect.value === 'creditCard') {
+    if (paymentSelect.value === 'creditCard') { // executes if the payment method is credit card and not paypal
     // Check if it's numeric and valid in one go
     
       if (!/^\d{16}$/.test(cardNum)) {

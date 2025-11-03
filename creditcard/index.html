@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W07 Prove - Credit Card Form</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="creditcard.js" defer></script>
+</head>
+<body>
+    <form action="#" id="credit-card-form" method="get">
+        <div id="cards-comb">
+            <div id="card-front">
+                <p>TOTAL: $199</p>
+                <p id="card-emoji">💳</p>
+                <div id="card-number-box">
+                    <label for="card-number">CARD NUMBER</label>
+                    <input type="text" id="card-number" name="cardNumber" placeholder="1234 5678 1234 5678" required>
+                </div>
+                <div id="card-holder-box">
+                    <label for="card-holder">CARD HOLDER</label>
+                    <input type="text" id="card-holder" name="cardHolder" placeholder="John Doe" required>
+                </div>
+                <div id="card-expiration">
+                    <label for="expiration-date">EXPIRATION</label>
+                    <input type="text" id="month" name="exp-month" placeholder="MM" aria-labelledby="expiration-date" required>
+                    <input type="text" id="year" name="exp-year" placeholder="YY" aria-labelledby="expiration-date" required>
+                </div>
+            </div>
+            <div id="card-back">
+                <div id="card-stripe"></div>
+                <div id="security-code">
+                    <label for="cvc-code">CVC/CVV</label>
+                    <input type="text" id="cvc-code" name="cvc" placeholder="xxx" required>
+                </div>
+            </div>
+            <button>Submit</button>
+    </form>
+    </div>
+    <p id="error"></p>
+    <!-- <p>CARD NUMBER</p> -->
+</body>
+</html>

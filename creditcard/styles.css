@@ -1,0 +1,86 @@
+#cards-comb {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    width: 700px;
+    margin: 100px auto;
+}
+#card-front {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    background-color: #ccc;
+    border-radius: 5px;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* grid-template-rows: 75px 1fr 75px 75px; */
+    padding: 10px;
+    height: 250px;
+    box-shadow: 5px 5px 10px;
+}
+#card-emoji {
+    font-size: 2.5em;
+    text-align: right;
+    margin: 0;
+}
+#card-holder-box {
+    grid-row: 3/4;
+}
+#card-expiration {
+    grid-row: 3/4;
+}
+#card-expiration label {
+    display: block;
+}
+#card-expiration input {
+    display: inline;
+}
+#card-back {
+    grid-column: 2/4;
+    grid-row: 2/4;
+    background-color: #ccc;
+    border-radius: 5px;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 250px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px;
+}
+#card-stripe {
+    background-color: black;
+    grid-column: 2/3;
+    height: 50px;
+    margin-top: 25px;
+    /* width: 200px; */
+}
+#security-code {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    padding: 10px;
+}
+#security-code input {
+    width: 50px;
+}
+input {
+    display: block;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 225px;
+}
+#card-expiration input {
+    width: 50px;
+}
+button {
+    grid-column: 3/4;
+    grid-row: 4/5;
+    width: 150px;
+    padding: 15px;
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ddd;
+}
