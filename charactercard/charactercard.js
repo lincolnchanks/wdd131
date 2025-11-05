@@ -5,19 +5,20 @@ const characterCard = {
     health: 100,
     imageSource: "images/snortleblat.webp",
     alive: true,
-    attacked: function() {
+    attacked() {
         if (this.health != 0) {
             console.log(this.health);
             this.health -= 20;
             if (this.health == 0) {
+                alert("Your character is DEAD.");
                 console.log("Your character is DEAD.");
-                alive = false;
+                this.alive = false;
             }
             refreshCharacterStats();
         }
     },
-    levelUp: function() {
-        if (alive) {
+    levelUp() {
+        if (this.alive) {
             console.log(this.level);
             this.level += 1;
             refreshCharacterStats();
@@ -41,39 +42,30 @@ function refreshCharacterStats(){
     characterStats.innerHTML = cardTemplate(characterCard);
 }
 
-attackedButton.addEventListener('click', function() {
-    if (characterCard.health != 0) {
-        console.log(characterCard.health);
-        characterCard.health -= 20;
-        if (characterCard.health == 0) {
-            console.log("Your character is DEAD.");
-            characterCard.alive = false;
-        }
-        refreshCharacterStats();
-    }
-})
+attackedButton.addEventListener("click", function() {
+    characterCard.attacked();
+});
+levelUpButton.addEventListener("click", function() {
+    characterCard.levelUp();
+});
 
-levelUpButton.addEventListener('click', function() {
-    if (characterCard.alive) {
-        console.log(characterCard.level);
-        characterCard.level += 1;
-        refreshCharacterStats();
-    }
-})
+// attackedButton.addEventListener('click', function() {
+//     if (characterCard.health != 0) {
+//         console.log(characterCard.health);
+//         characterCard.health -= 20;
+//         if (characterCard.health == 0) {
+//             alert("Your character is DEAD.");
+//             console.log("Your character is DEAD.");
+//             characterCard.alive = false;
+//         }
+//         refreshCharacterStats();
+//     }
+// })
 
-// levelUpButton.addEventListener('click', characterCard.levelUp);
-
-// characterCard.attacked();
-// characterCard.attacked();
-// characterCard.attacked();
-// characterCard.attacked();
-// characterCard.attacked();
-
-// attackedButton.addEventListener('click', );
-
-// characterCard.attacked
-// console.log(characterCard.name);
-// console.log(characterCard.class);
-// console.log(characterCard.level);
-// console.log(characterCard.health);
-// console.log(characterCard.imageSource);
+// levelUpButton.addEventListener('click', function() {
+//     if (characterCard.alive) {
+//         console.log(characterCard.level);
+//         characterCard.level += 1;
+//         refreshCharacterStats();
+//     }
+// })
