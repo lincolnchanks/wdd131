@@ -1,0 +1,118 @@
+/* #content {
+    margin: 0 auto;
+} */
+#logo-items {
+    /* margin: 0 auto; */
+    text-align: center;
+}
+#recipe-book-logo {
+    max-width: 100px;
+}
+h1 {
+    display: inline;
+}
+#search-bar {
+    display: flex;
+    margin: 0 auto;
+    width: 95%;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 15px;
+}
+#search-bar p {
+    /* border-right: 1px solid gray; */
+    font-size: 1em;
+    color: #777;
+    margin: 0;
+    align-self: center;
+}
+#search-icon {
+    max-width: 30px;
+    border-left: 1px solid gray;
+    padding: 3px;
+    padding-left: 10px;
+}
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 15px;
+    /* flex-wrap: wrap; */
+}
+.recipe-card > * {
+    margin: 25px;
+}
+.recipe-card img {
+    /* flex-basis: 600px; */
+    /* flex-shrink: 1; */
+    display: block;
+    max-width: 500px;
+    /* flex-basis: 500px; */
+    /* flex-shrink: 1; */
+
+    /* flex-basis: 600px; */
+    /* flex-grow: 1; */
+}
+.type-tag {
+    font-size: 1.5em;
+    border: 3px solid black;
+    background-color: #ddd;
+    /* border-end-end-radius: 15px; */
+    width: 200px;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: -15px;
+}
+.recipe-card h2 {
+    color: blue;
+    margin-top: -15px;
+}
+.recipe-card span {
+    margin-top: -15px;
+}
+.hidden {
+    display: none;
+}
+#socials {
+    text-align: center;
+    padding: 45px;
+}
+#socials img {
+    max-width: 50px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+}
+footer a {
+    display: block;
+    text-align: center;
+    align-content: center;
+}
+
+@media screen and (min-width: 860px) {
+    .hidden {
+        display: block;
+    }
+    .card-desc > * {
+        margin-top: 0px;
+    }
+    .card-desc p {
+        margin-top: 20px;
+    }
+    .card-desc h2 {
+        margin-top: 45px;
+    }
+    footer {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    #socials img {
+        width: 100px;
+    }
+    .recipe-card {
+        flex-direction: row;
+        /* flex-wrap: nowrap; */
+    }
+}
