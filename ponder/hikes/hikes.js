@@ -70,3 +70,95 @@ const hikes = [
     trailhead: [43.78555, -111.98996]
   }
 ];
+// USE THIS ON YOUR PROVE HOMEWORK THIS WEEK! IT'S SO USEFUL!!
+
+// Gets a random number to use for the index.
+let randomNum = Math.floor(Math.random() * hikes.length);
+console.log(randomNum);
+
+const hikeContainer = document.querySelector("#hike-container");
+const searchBtn = document.querySelector("button");
+
+searchBtn.addEventListener("click", search);
+
+function search(){
+  let hikeQuery = document.querySelector("#search").value;
+  console.log(hikeQuery);
+
+  // returns an array of hikes
+  let filterHikes = hikes.filter(function(hike){
+    return (
+      hike.name.toLowerCase().includes(hikeQuery.toLowerCase()) ||
+      hike.description.toLowerCase().includes(hikeQuery.toLowerCase()) ||
+      hike.tags.find(tag => tag.toLowerCase().includes(hikeQuery.toLowerCase()))
+    );
+  })
+
+  // Sort by difficulty
+  let sortedHikes = filterHikes.sort(compareDifficulty);
+
+  function compareDifficulty(a, b) {
+    if (a.difficulty < b.difficulty) {
+        return -1;
+    } else if (a.difficulty > b.difficulty) {
+        return 1;
+    }
+    return 0;
+  }
+
+  // Clear out screen
+  hikeContainer.innerHTML = "";
+
+  // Render screen
+  sortedHikes.forEach(function(hike){
+    renderHike(hike);
+  });
+}
+
+function tagTemplate(tags) {
+  // Simple return data function
+    return tags.map((tag)=> `<button>${tag}</button>`).join(' ');
+}
+
+function difficultyTemplate(rating) {
+  // Simple return data function
+		let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5">Difficulty: `
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        html += `<span aria-hidden="true" class="icon-boot"> 🥾</span>`
+      } else {
+        html += `<span aria-hidden="true" class="icon-empty">▫️</span>`
+      }			
+    }
+    html += `</span>`
+    return html
+  }
+
+function hikesTemplate(hike) {
+  // Returns the template literal for one hike card according to the template.
+  // It referes to one specific hike object from the array.
+    return `<div class="hike-card">
+  <div class="hike-content">
+    <h2>${hike.name}</h2>
+    <div class="hike-tags">
+      ${tagTemplate(hike.tags)}
+    </div>
+    <p>${hike.description}</p>
+    <p>${difficultyTemplate(hike.difficulty)}</p>
+  </div>
+</div>`
+// tagTemplate returns the tags as a template, 
+// difficultyTemplate returns a template of the difficulty
+}
+
+function renderHike(hike) {
+  // Create a template literal from a hike and add it to the HTML.
+    let html = hikesTemplate(hike);
+    hikeContainer.innerHTML += html
+}
+
+function init() {
+    renderHike(hikes[randomNum]);
+}
+
+init();
