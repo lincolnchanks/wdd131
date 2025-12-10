@@ -5,4 +5,37 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #396e94;
+}
+#search {
+    width: 95%;
+    /* text-align: center; */
+    /* margin: 0 auto; */
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.char-card {
+    border: 2px solid black;
+    margin: 0 auto;
+    width: 50%;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+@media screen and (min-width: 500px){
+    #character-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .char-card {
+        width: 75%;
+    }
+    .char-img-container img {
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
 }
