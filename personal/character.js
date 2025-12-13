@@ -16,12 +16,33 @@ characters.forEach(function(character){
 let characterPageContainer = document.querySelector("#character-info");
 
 function getCharacterPageTemplate(character){
-    return `<p>${character.name}</p>`;
+    return `<div id="basic-info">
+            <h2>${character.name}</h2>
+            <ul>
+                <li>
+                    Home Planet: ${character.homePlanet}
+                </li>
+                <li>
+                    Book Appearances: ${character.bookAppearances}
+                </li>
+                <li>
+                    Magic Systems: ${character.magicSystems}
+                </li>
+                <li>
+                    Alliances: ${character.alliances}
+                </li>
+            </ul>
+        </div>
+        <img src="${character.imgSrc}" alt="Picture of Hoid">
+        <div id="descriptions">
+            <p>${character.desc1}</p>
+            <p>${character.desc2}</p>
+        </div>`;
 }
 
 function renderCharacterPage(character){
     let html = getCharacterPageTemplate(character);
-    characterPageContainer.innerHTML += html;
+    characterPageContainer.innerHTML = html;
 }
 
 function init(){
