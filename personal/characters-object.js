@@ -2,7 +2,7 @@ export const characters = [
     {
         name: "Hoid",
         linkID: "hoid",
-        imgSrc: "images/300px-Worldsinger_by_ari_Ibarra.jpg",
+        imgSrc: "images/300px-Worldsinger_by_Ari_Ibarra.jpg",
         homePlanet: "Yolen",
         bookAppearances: "Mistborn Era 1 & 2, The Stormlight Archive, Warbreaker, Elantris, The Sunlit Man, and various cameos",
         magicSystems: "Yolish Lightweaving, Rosharan Lightweaving, Awakening, Allomancy, Elantrian, and possibly others.",
