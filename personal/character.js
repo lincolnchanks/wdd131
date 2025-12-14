@@ -32,12 +32,12 @@ function getCharacterPageTemplate(character){
                     Alliances: ${character.alliances}
                 </li>
             </ul>
+            <div id="descriptions">
+                <p>${character.desc1}</p>
+                <p>${character.desc2}</p>
+            </div>
         </div>
-        <img src="${character.imgSrc}" alt="Picture of Hoid">
-        <div id="descriptions">
-            <p>${character.desc1}</p>
-            <p>${character.desc2}</p>
-        </div>`;
+        <img src="${character.imgSrc}" alt="Picture of Hoid">`;
 }
 
 function renderCharacterPage(character){
