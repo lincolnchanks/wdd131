@@ -13,21 +13,26 @@ function search(){
     let filterCharacters = characters.filter(function(character){
         return (character.name.toLowerCase().includes(characterQuery.toLowerCase()));
     });
-    
-    // DEBUG: PRINT ALL FILTERED CHARACTERS
-    // filterCharacters.forEach(function(character){
-    //     console.log(character.name);
-    // });
 
-    // TO-DO: Add a sort function.
+    // Sort characters.
+    let sortedCharacters = filterCharacters.sort(compareNames);
 
     // Clear out character card screen.
     characterCardContainer.innerHTML = "";
 
     // Render screen with new characters.
-    filterCharacters.forEach(function(character){
+    sortedCharacters.forEach(function(character){
         renderCharacterCard(character);
     });
+}
+// Sort characters based on names.
+function compareNames(a, b){
+    if (a.name < b.name){
+        return -1;
+    } else if (a.name > b.name){
+        return 1;
+    }
+    return 0;
 }
 
 function getCharacterCardTemplate(character){
@@ -47,7 +52,8 @@ function renderCharacterCard(characterCard){
 }
 
 function init(){
-    characters.forEach(function(character){
+    let initSortCharacters = characters.sort(compareNames);
+    initSortCharacters.forEach(function(character){
         renderCharacterCard(character);
     });
 }
